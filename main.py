@@ -1,28 +1,34 @@
-def F(n):
-    count = 0
-    for x in n:
-        if x.isnumeric():
-            count += 1
-    return count
+from random import *
+s = input("Введите строку: ")
+print("Введенная строка:", s)
+count = len(s)
+print("Количество символов в строке:", count) # Подсчет количества символов
 
-n = input("Введите строку: ")
-count = F(n)
-print(f"Количество чисел в строке: {count}")
+# Подсчет количества символов
+import random
 
-new_n = ""
-flag = True
-for x in n:
-    if x == '(':
-        flag = False
-    elif x == ')':
-        flag = True
-    elif flag:
-        new_n += x
-        print("Исходная строка без символов между скобками:",'(',new_n,')')
-n = len(new_n)
-lst = [int(new_n) for _ in range(n)]
-count_zero = lst.count(0)
-print("Количество элементов списка равных 0:", count_zero)
-min_elem = min(lst)
-sum_after_min = sum(lst[lst.index(min_elem) + 1:])
-print("Сумма элементов списка после минимального элемента:", sum_after_min)
+# Генерация списка с рандомными элементами
+random_list = [random.randint(1, 100) for _ in range(10)]
+print("Исходный список:", random_list)
+
+# Очистка списка
+random_list.clear()
+print("Список после удаления всех элементов:", random_list)
+# Подсчет количества элементов списка равных 0
+n = int(input("Введите кол-во элементов списка: "))
+n0 = int(input("Введите начало рандома от 0: "))
+n1 = int(input("Введите конец рандома: "))
+l = list()
+for i in range(n):
+    l.append(randint(n0,n1))
+print(l)
+cnt = 0
+for i in l:
+    if i == 0:
+         cnt+=1
+print(cnt)
+
+
+
+
+
